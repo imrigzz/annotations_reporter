@@ -77,8 +77,8 @@ for img_id in annotator_absent:
     print(img_id)
 
 # View specific category image_id for specific annotatators 
-print("\nRejected images_id for annotator: 'line_segments-palden' ")
-print(annotator_counts["line_segments-palden"]["reject"]["image_id"])
+print("\nNo line-segmentaion-info images images_id for annotator: 'line_segments-kunchok' ")
+print(annotator_counts["line_segments-kunchok"]["no_span"]["image_id"])
 
 
 
