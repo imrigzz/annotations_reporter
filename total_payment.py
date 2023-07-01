@@ -14,7 +14,7 @@ def total_payment(counts_csv_path, rate):
 def main():
     # calculate total payment
     # path to annotator counts csv generated earlier
-    counts_csv_path = "annotators_report.csv"
+    counts_csv_path = "outputs/annotators_report.csv"
     rate  = float(input("Please provide the price for per-line annotations: "))
     total_payment(counts_csv_path, rate)
 
