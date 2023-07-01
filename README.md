@@ -1,17 +1,21 @@
-# annotations_reporter
+### Annotations_reporter:
 
 This program will print the Number of line segments annotated by annotators
 
+    1: Report.py
+        Input: jasonl file
+        Output: annotators_reporter.csv, missing_annotaor.csv
 
-### 1: Expected result:
-
-Example: 
-Annotator: line_segments-nyibum   segmented: 175 lines   Rejected:0    Ignored:0   No_span: 0
-Annotator: line_segments-palden   segmented: 128 lines   Rejected:1    Ignored:1   No_span: 1
-Annotator: line_segments-kunga   segmented: 150 lines   Rejected:0    Ignored:0   No_span: 0
+    2: total_payment.py:
+        Input: annotators_reporter.csv
+        Output: annotators_payment.csv
 
 
-2: The Data is stored in Format given below:
+
+
+For developer:
+
+1: The Data is stored in Format given below:
 
     Annotators_counts= {Annotator_id:{
                                         'accept':{
@@ -61,19 +65,4 @@ Annotator: line_segments-kunga   segmented: 150 lines   Rejected:0    Ignored:0 
                                                 } 
                             }
         }
-
-3: How to view accept,reject,ignore or no_span image_id for specific annotators 
-
-    => dict_name["annotator_id"]["count_class"]["image_id"]
-
-    count_class:
-        - accept
-        - reject
-        - ignore
-        - no_span
-
-
-    Example:  
-        annotator_counts["line_segments-kunchok"]["no_span"]["image_id"]
-
 
