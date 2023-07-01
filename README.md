@@ -3,12 +3,37 @@
 This program will print the Number of line segments annotated by annotators
 
     1: Report.py
-        Input: jasonl file
+        Input: jsonl file
         Output: annotators_reporter.csv, missing_annotaor.csv
+        
+        a: Annotators_reporter.csv columns
+            annotator_id: annotator_id
+            accept counts: Number of line segments annoted by annotator which were accepted
+            recject counts: Number of rejected annotation for annotator
+            ignore counts: Number of ignored images by annotator
+            no_span counts: Number of Images with no annotatoed line segmentations 
+            accept image_ids: Image IDs of all accepted annotations
+            recject image_ids: Image IDs of all rejected annotations
+            ignore image_ids: Image IDs of all ignored annotations
+            no_spans image_ids: Image IDs of all no line segments annotations
+
+        b: missing_annotator.csv columns
+            Image ID: Image IDs of the Images with missing annotator_ids
+
 
     2: total_payment.py:
         Input: annotators_reporter.csv
-        Output: annotators_payment.csv
+        Output: annotators_payment.csv, price for per-line segment annotations
+
+        a: Annotator_payment.csv columns
+            annotator_id: annotator_id
+            accept counts: Number of line segments annoted by annotator which were accepted
+            recject counts: Number of rejected annotation for annotator
+            ignore counts: Number of ignored images by annotator
+            no_span counts: Number of Images with no annotatoed line segmentations 
+            Total_payment: The total amount to pay for line segments annotation.
+
+
 
 
 
