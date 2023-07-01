@@ -3,30 +3,15 @@
 This program will print the Number of line segments annotated by annotators
 
 
-1: Expected result:
-    report.py :
-            This file will take the jsonl file as input and create a annotator report csv file
-            Input: jsonl file
-            output: annotator_report.csv, missing_annotator.csv
+### 1: Expected result:
 
-            annotator_report.csv columns: 
-                1: annotator_id = id of the annotator
-                2: accept counts = number of annotated line segmented accepted
-                3: recject counts
-                4: ignore counts
-                5: no_span counts
-                6: accept image_ids
-                7: recject image_ids
-                8: ignore image_ids
-                9: no_spans image_ids
+Example: 
+Annotator: line_segments-nyibum   segmented: 175 lines   Rejected:0    Ignored:0   No_span: 0
+Annotator: line_segments-palden   segmented: 128 lines   Rejected:1    Ignored:1   No_span: 1
+Annotator: line_segments-kunga   segmented: 150 lines   Rejected:0    Ignored:0   No_span: 0
 
-    total_payment.py:
-            Input: annotator_report.csv, price for per-line annotations
-            Output: annotator_payment.csv
 
-            annotator_id,accept counts,recject counts,ignore counts,no_span counts,Total_payment
-
-DIctionary data format: The Data is stored in Format given below:
+2: The Data is stored in Format given below:
 
     Annotators_counts= {Annotator_id:{
                                         'accept':{
@@ -51,7 +36,7 @@ DIctionary data format: The Data is stored in Format given below:
                                     }
                         }
     
-    Example:
+    Example data format:
         Annotators_counts = {"line_segments-kunchok":{
                                         'accept':{
                                                     "counts":141,
@@ -77,5 +62,18 @@ DIctionary data format: The Data is stored in Format given below:
                             }
         }
 
+3: How to view accept,reject,ignore or no_span image_id for specific annotators 
+
+    => dict_name["annotator_id"]["count_class"]["image_id"]
+
+    count_class:
+        - accept
+        - reject
+        - ignore
+        - no_span
+
+
+    Example:  
+        annotator_counts["line_segments-kunchok"]["no_span"]["image_id"]
 
 
