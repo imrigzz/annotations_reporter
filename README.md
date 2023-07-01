@@ -1,6 +1,14 @@
 ### Annotations_reporter:
 
-This program will print the Number of line segments annotated by annotators
+#### STEPS:
+    Step 1: Run report.py: 
+            This program will find the Number of line segments annotated by annotators and save the result as csv file(annotators_report.csv)
+
+    Step 2: Run total_payments.py:
+            This program will calculate the total amount needed to pay for annotations. The Result will be saved as csv file(annotators_payment.csv)
+
+
+#### FILES DETAILS:
 
     1: Report.py
         Input: jsonl file
