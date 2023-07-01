@@ -7,7 +7,7 @@ def total_payment(counts_csv_path, rate):
     csv_input['Total_payment']=None
     csv_input['Total_payment']=csv_input["accept counts"]*rate
     
-    csv_input.to_csv('annotators_payment.csv',index=False)
+    csv_input.to_csv('outputs/annotators_payment.csv',index=False)
     print("Payment successfully calculated")
 
 
