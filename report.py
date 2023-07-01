@@ -1,6 +1,5 @@
 import jsonlines
 import csv
-import pandas as pd
 
 def create_annotator_dict():
     return {
@@ -67,13 +66,11 @@ def get_missing_annotators(file_path,output_file):
         writer.writerows([[image_id] for image_id in annotator_absent])
 
     print(f"Saved missing annotator information to {output_file}")
-    
-    return annotator_absent
 
 
-def dict_to_csv(annotator_dict):
+def dict_to_csv(annotator_dict, output_file):
     # Open the CSV file in write mode
-    with open('annotators_report.csv', 'w', newline='') as csvfile:
+    with open(output_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         
         # Write the column headers
@@ -90,7 +87,7 @@ def dict_to_csv(annotator_dict):
             ignore_image_ids = values['ignore']['image_id']
             no_span_image_ids = values['no_span']['image_id']
             writer.writerow([annotator_id, accept_counts,reject_counts,ignore_counts,no_span_counts, accept_image_ids,reject_image_ids,ignore_image_ids,no_span_image_ids])
-        print("Successfully created the annotator counts CSV file")
+        print(f"Successfully created the annotator counts CSV file to {output_file}")
 
 def total_payment(counts_csv_path, rate):
     csv_input = pd.read_csv(counts_csv_path)
@@ -108,11 +105,11 @@ def main():
     annotator_counts = get_annotator_counts(jsonl_file)
 
     # to csv file
-    dict_to_csv(annotator_counts)
+    dict_to_csv(annotator_counts,"outputs/annotators_report.csv")
 
 
     # Get image IDs with missing annotator information
-    get_missing_annotators(jsonl_file,"missing_annotator.csv")
+    get_missing_annotators(jsonl_file,"outputs/missing_annotator.csv")
 
 
     # # Print the counts for each annotator
