@@ -89,13 +89,6 @@ def dict_to_csv(annotator_dict, output_file):
             writer.writerow([annotator_id, accept_counts,reject_counts,ignore_counts,no_span_counts, accept_image_ids,reject_image_ids,ignore_image_ids,no_span_image_ids])
         print(f"Successfully created the annotator counts CSV file to {output_file}")
 
-def total_payment(counts_csv_path, rate):
-    csv_input = pd.read_csv(counts_csv_path)
-    csv_input.drop(['accept image_ids','ignore image_ids','no_spans image_ids','recject image_ids'],axis=1,inplace=True)
-    csv_input['Total_payment']=None
-    csv_input['Total_payment']=csv_input["accept counts"]*rate
-    csv_input.to_csv('payment.csv',index=False)
-    print("Payment successfully calculated")
 
 
 def main():

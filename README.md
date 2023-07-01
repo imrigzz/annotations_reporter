@@ -19,7 +19,7 @@
             accept counts: Number of line segments annoted by annotator which were accepted
             recject counts: Number of rejected annotation for annotator
             ignore counts: Number of ignored images by annotator
-            no_span counts: Number of Images with no annotatoed line segmentations 
+            no_span counts: Number of Images with no annotated line segmentations 
             accept image_ids: Image IDs of all accepted annotations
             recject image_ids: Image IDs of all rejected annotations
             ignore image_ids: Image IDs of all ignored annotations
