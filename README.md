@@ -1,10 +1,10 @@
 ### Annotations_reporter:
 
 #### STEPS:
-    Step 1: Run report.py: 
+    Step 1: Run main_report.py: 
             This program will find the Number of line segments annotated by annotators and save the result as csv file(annotators_report.csv)
 
-    Step 2: Run total_payments.py:
+    Step 2: Run main_total_payments.py:
             This program will calculate the total amount needed to pay for annotations. The Result will be saved as csv file(annotators_payment.csv)
 
 
@@ -19,11 +19,11 @@
             accept counts: Number of line segments annoted by annotator which were accepted
             recject counts: Number of rejected annotation for annotator
             ignore counts: Number of ignored images by annotator
-            no_span counts: Number of Images with no annotated line segmentations which were accepted 
+            accept no_span counts: Number of Images with no annotated line segmentations which were accepted 
             accept image_ids: Image IDs of all accepted annotations
             recject image_ids: Image IDs of all rejected annotations
             ignore image_ids: Image IDs of all ignored annotations
-            no_spans image_ids: Image IDs of all no line segments annotations which is accepted
+            accept no_spans image_ids: Image IDs of all no line segments annotations which is accepted
 
         b: missing_annotator.csv columns
             Image ID: Image IDs of the Images with missing annotator_ids
@@ -38,7 +38,7 @@
             accept counts: Number of line segments annoted by annotator which were accepted
             recject counts: Number of rejected annotation for annotator
             ignore counts: Number of ignored images by annotator
-            no_span counts: Number of Images with no annotatoed line segmentations which were accepted
+            accept no_span counts: Number of Images with no annotatoed line segmentations which were accepted
             Total_payment: The total amount to pay for line segments annotation.
 
 
@@ -102,7 +102,7 @@ For developer:
 2: Priority levels for varibles, so that we can decide which image goes in which section
 ***annotator_id>answer>span***
 
-Explanation:
+Eg:
     we check span only if answer=accept
     we check answer only if annotator_id is present
     
