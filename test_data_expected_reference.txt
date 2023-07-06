@@ -1,0 +1,34 @@
+Report expected results
+nyibum
+accept span : 5 line_segmented
+accept no span : 1 image
+reject no span: 1 image
+reject span 3: 1 image
+ignore no span: 1 image
+ignore span 3: 1 image
+accept no_annotator span 5: 1 image
+accept no_annotator no span: 1 image
+
+palden
+reject span : 1 image
+accept no span: 1 image
+ignore: 1 image
+accept span: 0
+
+total payment expected results
+nyibum 
+accept span : 5 line_segmented
+reject count: 2 image
+ignore count: 2 image
+accept no span : 1 image
+
+palden 
+accept span : 0 line_segmented
+reject count: 1 image
+ignore count: 1 image
+accept no span : 1 image
+
+
+
+
+

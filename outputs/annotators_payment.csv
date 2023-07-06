@@ -1,4 +1,4 @@
-annotator_id,accept counts,recject counts,ignore counts,no_span counts,Total_payment
+annotator_id,accept counts,recject counts,ignore counts,accept no_span counts,Total_payment
 line_segments-nyibum,175,0,0,0,875.0
 line_segments-palden,128,1,1,1,640.0
 line_segments-kunga,150,0,0,0,750.0

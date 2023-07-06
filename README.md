@@ -19,11 +19,11 @@
             accept counts: Number of line segments annoted by annotator which were accepted
             recject counts: Number of rejected annotation for annotator
             ignore counts: Number of ignored images by annotator
-            no_span counts: Number of Images with no annotated line segmentations 
+            no_span counts: Number of Images with no annotated line segmentations which were accepted 
             accept image_ids: Image IDs of all accepted annotations
             recject image_ids: Image IDs of all rejected annotations
             ignore image_ids: Image IDs of all ignored annotations
-            no_spans image_ids: Image IDs of all no line segments annotations
+            no_spans image_ids: Image IDs of all no line segments annotations which is accepted
 
         b: missing_annotator.csv columns
             Image ID: Image IDs of the Images with missing annotator_ids
@@ -38,7 +38,7 @@
             accept counts: Number of line segments annoted by annotator which were accepted
             recject counts: Number of rejected annotation for annotator
             ignore counts: Number of ignored images by annotator
-            no_span counts: Number of Images with no annotatoed line segmentations 
+            no_span counts: Number of Images with no annotatoed line segmentations which were accepted
             Total_payment: The total amount to pay for line segments annotation.
 
 
@@ -99,3 +99,10 @@ For developer:
                             }
         }
 
+2: Priority levels for varibles, so that we can decide which image goes in which section
+***annotator_id>answer>span***
+
+Explanation:
+    we check span only if answer=accept
+    we check answer only if annotator_id is present
+    
